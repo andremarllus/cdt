@@ -136,7 +136,7 @@
 	</pluginRepositories>
 
 	<build>
-		<finalName>aulaUNIPE</finalName>
+		<finalName>marketpay</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
