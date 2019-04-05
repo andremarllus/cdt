@@ -1,0 +1,34 @@
+server:
+   port: 8080
+   servlet:
+      context-path: /
+debug:
+    true      
+
+spring:
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:postgresql://localhost:5433/cdt
+        username: postgres
+        password: postgres
+        hikari.minimumIdle: 3
+        hikari.maximumPoolSize: 5
+        hikari.idleTimeout: 30000
+        hikari.poolName: SpringBootJPAHikariCP
+        hikari.maxLifetime: 2000000
+        hikari.connectionTimeout: 30000
+    jpa.show-sql : true
+    jpa.hibernate.ddl-auto : create
+    jpa.database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
+  
+springfox.documentation.swagger.v2.path: /docs
+logging:
+    level: 
+       org.springframework: ERROR
+    
+elk:
+    ip : 0
+    porta : 0
+    
+   
