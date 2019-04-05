@@ -8,9 +8,9 @@ debug:
 spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5433/cdt
-        username: postgres
-        password: postgres
+        url: jdbc:postgresql://${URL_BANCO:localhost}:${PORTA_BANCO:5432}/${NOME_BANCO:cdt} 
+        username: ${USUARIO_BANCO:postgres}
+        password: ${SENHA_BANCO:postgres}
         hikari.minimumIdle: 3
         hikari.maximumPoolSize: 5
         hikari.idleTimeout: 30000
@@ -18,7 +18,7 @@ spring:
         hikari.maxLifetime: 2000000
         hikari.connectionTimeout: 30000
     jpa.show-sql : true
-    jpa.hibernate.ddl-auto : create
+    jpa.hibernate.ddl-auto : update
     jpa.database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
   
@@ -30,5 +30,3 @@ logging:
 elk:
     ip : 0
     porta : 0
-    
-   
